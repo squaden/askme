@@ -15,7 +15,7 @@ class User < ApplicationRecord
                        format: { with: /\A\w+\z/ }
   validates :email, presence: true,
                     uniqueness: true,
-                    format: { with: /\A[a-z\d_+.\-]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i }
+                    format: { with: /\A.+@.+\..+\z/ }
 
   attr_accessor :password
 
@@ -45,8 +45,8 @@ class User < ApplicationRecord
   def self.authenticate(email, password)
     user = find_by(email: email) # сперва находим кандидата по email
 
-    Сравнивается только password_hash, а оригинальный пароль никогда и нигде не
-    сохраняется
+    # Сравнивается только password_hash, а оригинальный пароль никогда и нигде не
+    # сохраняется
     if user.present? && user.password_hash == User.hash_to_string(
       OpenSSL::PKCS5.pbkdf2_hmac(password, user.password_salt, ITERATIONS,
                                  DIGEST.length, DIGEST))
