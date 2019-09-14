@@ -41,3 +41,9 @@
 .question-actions a {
   margin-left: 10px;
 }
+
+.questions {
+  margin: 10px;
+  padding: 5px;
+  font-size: 20px;
+}
