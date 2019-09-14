@@ -7,7 +7,11 @@ class UsersController < ApplicationController
         username: 'squaden',
         avatar_url: 'https://clck.ru/HoVHc'
       ),
-      User.new(id: 2, name: 'Misha', username: 'aristofun')
+      User.new(
+        id: 2,
+        name: 'Vasya',
+        username: 'vasilich'
+      )
     ]
   end
 
@@ -20,7 +24,8 @@ class UsersController < ApplicationController
   def show
     @user = User.new(
                   name: 'Denis',
-                  username: 'squaden'
+                  username: 'squaden',
+                  avatar_url: 'https://clck.ru/HoVHc'
     )
 
     @questions = [
