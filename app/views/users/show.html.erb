@@ -62,10 +62,6 @@
 <div class="column-3-4">
   <div class="user-questions buffer-both">
     <div class="questions-list">
-      <div class="questions">
-        <%= "#{@questions.count} #{declension(@questions.count, 'вопрос', 'вопроса',
-                                              'вопросов')} для @#{@user.username}:" %>
-      </div>
       <% @questions.each do |question| %>
         <%= render partial: 'questions/question', object: question %>
       <% end %>
