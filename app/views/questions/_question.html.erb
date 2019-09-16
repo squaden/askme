@@ -11,6 +11,9 @@
     <% end %>
 
     <div class="question-date">
+      <% if question.author %>
+        <%= link_to "Спросил @#{question.author.username}", user_path(question.author) %>
+      <% end %>
       <%= l(question.created_at, format: :short) %>
     </div>
   </div>
