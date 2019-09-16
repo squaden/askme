@@ -16,6 +16,9 @@ class User < ApplicationRecord
                     uniqueness: true,
                     format: { with: /\A.+@.+\..+\z/ }
 
+  validates :background_color, format: { with: /\A#?(?:[A-F0-9]{3}){1,2}\z/i },
+            on: :update
+
   attr_accessor :password
 
   validates_presence_of :password, on: :create
