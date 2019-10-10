@@ -13,8 +13,7 @@ class Question < ApplicationRecord
 
   def add_hashtags
     self.hashtags.clear
-    hashtags_list = Hashtag.from_string("#{text}#{answer}")
-    hashtags_list.each { |hashtag| self.hashtags << hashtag }
+    hashtags_list = Hashtag.from_string("#{text} #{answer}")
+    hashtags_list.each { |tag| self.hashtags << tag }
   end
-
 end
