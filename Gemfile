@@ -10,6 +10,8 @@ gem 'rails_12factor'
 
 gem 'uglifier'
 
+gem 'recaptcha', require: 'recaptcha/rails'
+
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
 
