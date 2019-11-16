@@ -1,3 +1,19 @@
-* Ruby version 2.6.3
+## Askme
+Приложение вопросов и ответов по мотивам ask.fm
 
-* Rails version 5.2.3
+Пример на [heroku](https://askmesq.herokuapp.com)
+
+### Требования
+* Версия Ruby 2.6.3
+* Версия Rails 5.2.3
+* Установленный gem Bundler
+
+### Установка
+Выполните в терминале или командной строке последовательно следующие команды:
+* `git clone git@github.com:squaden/askme`
+* `bundle install`
+* `bundle exec rails db:migrate`
+
+### Использование
+* Для старта сервера на локальной машине в терминале или командной строке выполните команду `rails s`
+* Откройте веб-браузер и перейдите по адресу: `http://localhost:3000`
