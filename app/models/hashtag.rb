@@ -1,10 +1,13 @@
 class Hashtag < ApplicationRecord
   HASHTAG_REGEX = (/#[\p{L}0-9_]+/)
 
-  has_many :hashtags_questions
+  has_many :hashtags_questions, inverse_of: :hashtag, dependent: :destroy
   has_many :questions, through: :hashtags_questions
 
+  scope :have_question, -> { joins(:questions).order(:name).distinct }
+
   validates :name, uniqueness: true
+
 
   def self.scan_string(text)
     text.scan(HASHTAG_REGEX).map { |tag| tag.mb_chars.downcase }.uniq

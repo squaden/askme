@@ -17,8 +17,8 @@
     </div>
 
     <div class="text-medium">
-      <% @hashtags.each do |tag| %>
-        <%= link_to tag.name, hashtag_path(tag) %>
+      <% @hashtags.each do |hashtag| %>
+        <%= link_to hashtag.name, hashtag_path(hashtag) %>
       <% end %>
     </div>
   </div>

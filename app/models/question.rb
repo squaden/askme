@@ -2,7 +2,7 @@ class Question < ApplicationRecord
 
   belongs_to :user
   belongs_to :author, class_name: 'User'
-  has_many :hashtags_questions, dependent: :destroy
+  has_many :hashtags_questions, inverse_of: :question, dependent: :destroy
   has_many :hashtags, through: :hashtags_questions
 
   validates :text, presence: true, length: { maximum: 255 }
