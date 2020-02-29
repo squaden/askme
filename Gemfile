@@ -13,7 +13,7 @@ gem 'uglifier'
 gem 'recaptcha', require: 'recaptcha/rails'
 
 # Use Puma as the app server
-gem 'puma', '~> 3.11'
+gem 'puma', '~> 3.12'
 
 gem 'jquery-rails'
 
